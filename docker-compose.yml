@@ -1,0 +1,10 @@
+version: '3'
+services:
+  demo-app-python:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    # image: zmihai/pregatit-demo-app-python
+    ports:
+     - 5005:5000
+    container_name: demo-app-python
