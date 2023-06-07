@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
         - name: devops-pipeline
-          image: lighttheshadow/proiect-pentalog:481c04
+          image: lighttheshadow/proiect-pentalog:fe8dda
           imagePullPolicy: Never
           ports:
             - containerPort: 5000
