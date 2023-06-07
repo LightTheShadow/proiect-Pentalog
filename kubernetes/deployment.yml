@@ -1,0 +1,20 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: devops-pipeline
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: devops-pipeline
+  template:
+    metadata:
+      labels:
+        app: devops-pipeline
+    spec:
+      containers:
+        - name: devops-pipeline
+          image: lighttheshadow/proiect-pentalog:481c04
+          imagePullPolicy: Never
+          ports:
+            - containerPort: 5000
