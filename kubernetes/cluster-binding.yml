@@ -10,3 +10,16 @@ subjects:
 - kind: ServiceAccount
   name: admin-user
   namespace: kubernetes-dashboard
+
+apiVersion: rbac.authorization.k8s.io/v1
+kind: ClusterRoleBinding
+metadata:
+  name: github-user
+roleRef:
+  apiGroup: rbac.authorization.k8s.io
+  kind: ClusterRole
+  name: continuous-deployment
+subjects:
+- kind: ServiceAccount
+  name: github-user
+  namespace: kubernetes-dashboard
