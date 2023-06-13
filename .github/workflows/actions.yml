@@ -52,3 +52,16 @@ jobs:
         run: docker build . --file Dockerfile --tag lighttheshadow/proiect-pentalog:${GITHUB_SHA::6}
       - name: Docker Push
         run: docker push ${{secrets.DOCKER_USER}}/proiect-pentalog:${GITHUB_SHA::6}
+      
+  deploy:
+    name: Deploy
+    needs: [ test, build ]
+    runs-on: ubuntu-latest
+    steps:
+      - name: Set the Kubernetes context
+        uses: lighttheshadow/proiect-pentalog
+        with:
+          method: service-account
+          k8s-url: http://99df-37-251-220-99.ngrok-free.app
+          k8s-secret: ${{ secrets.KUBERNETES_SECRET }}
+          
