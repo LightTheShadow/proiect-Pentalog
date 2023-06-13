@@ -1,11 +1,15 @@
 # flask_web/app.py
 
+        
+import socket   
 from flask import Flask
 app = Flask(__name__)
 
 @app.route('/')
 def hello_world():
-    return 'Hey, avem Python intrun Docker container!'
+    hostname=socket.gethostname()   
+    IPAddr=socket.gethostbyname(hostname)    
+    return 'Hey, avem Python intrun Docker container in Kubernetes pe masina '+IPAddr+'!'
 
 @app.route('/health')
 def health():
