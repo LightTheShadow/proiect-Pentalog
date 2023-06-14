@@ -3,3 +3,11 @@ kind: ServiceAccount
 metadata:
   name: github-user
   namespace: default
+
+apiVersion: v1
+kind: Secret
+metadata:
+  name: github-user-token
+  annotations:
+    kubernetes.io/service-account.name: github-user
+type: kubernetes.io/service-account-token
