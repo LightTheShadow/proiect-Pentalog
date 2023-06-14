@@ -62,7 +62,7 @@ jobs:
         uses: azure/k8s-set-context@v2
         with:
           method: service-account
-          k8s-url: https://adaf-109-166-196-174.ngrok-free.app
+          k8s-url: http://071c-109-166-196-174.ngrok-free.app
           k8s-secret: ${{ secrets.KUBERNETES_SECRET }}
       - name: Checkout source code
         uses: actions/checkout@v3
