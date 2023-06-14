@@ -69,9 +69,8 @@ jobs:
         with:
           namespace: default
           manifests: |
-            kubernetes/deployment.yaml
-             kubernetes/ingress.yaml
-             kubernetes/service.yaml
+            kubernetes/deployment.yml
+            kubernetes/service.yml
           images: |
             lighttheshadow/proiect-pentalog:${GITHUB_SHA::6}
           
