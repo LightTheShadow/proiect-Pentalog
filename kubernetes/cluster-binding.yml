@@ -22,4 +22,4 @@ roleRef:
 subjects:
 - kind: ServiceAccount
   name: github-user
-  namespace: kubernetes-dashboard
+  namespace: default
