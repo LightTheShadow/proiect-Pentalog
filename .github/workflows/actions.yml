@@ -64,6 +64,8 @@ jobs:
           method: service-account
           k8s-url: http://99df-37-251-220-99.ngrok-free.app
           k8s-secret: ${{ secrets.KUBERNETES_SECRET }}
+      - name: Checkout source code
+        uses: actions/checkout@v3
       - name: Deploy to the Kubernetes cluster
         uses: azure/k8s-deploy@v1
         with:
